@@ -27,6 +27,15 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
+    <button @click="changeLang">国际化</button>
+    <ul>
+      <li>{{$t('m.music')}}</li>
+      <li>{{$t('m.findMusic')}}</li>
+      <li>{{$t('m.myMusic')}}</li>
+      <li>{{$t('m.friend')}}</li>
+      <li>{{$t('m.musician')}}</li>
+      <li>{{$t('m.download')}}</li>
+    </ul>
   </div>
 </template>
 
@@ -35,6 +44,22 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  data(){
+    return {
+      lang:'zh-CN'
+    }
+  },
+  methods:{
+     changeLang() {
+      if ( this.lang === 'zh-CN' ) {
+              this.lang = 'en-US';
+              this.$i18n.locale = this.lang;//关键语句
+          }else {
+              this.lang = 'zh-CN';
+              this.$i18n.locale = this.lang;//关键语句
+          }
+    }
   }
 }
 </script>
