@@ -1,4 +1,4 @@
-# i18n-vue
+# i18n-vue international
 
 ## Project setup
 ```
