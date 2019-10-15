@@ -35,6 +35,7 @@
       <li>{{$t('m.friend')}}</li>
       <li>{{$t('m.musician')}}</li>
       <li>{{$t('m.download')}}</li>
+      <li>{{test1}}</li>
     </ul>
   </div>
 </template>
@@ -47,7 +48,12 @@ export default {
   },
   data(){
     return {
-      lang:'zh-CN'
+      lang:'zh-CN',
+    }
+  },
+   computed: {
+    test1: function () {
+      return this.$t('m.download')
     }
   },
   methods:{
@@ -60,7 +66,7 @@ export default {
               this.$i18n.locale = this.lang;//关键语句
           }
     }
-  }
+  },
 }
 </script>
 
